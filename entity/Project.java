@@ -22,6 +22,38 @@ public class Project {
   private List<Material> materials = new LinkedList<>();
   private List<Step> steps = new LinkedList<>();
   private List<Category> categories = new LinkedList<>();
+  
+  @Override
+  public String toString() {
+    String result = "";
+    
+    result += "\n   ID=" + projectId;
+    result += "\n   name=" + projectName;
+    result += "\n   estimatedHours=" + estimatedHours;
+    result += "\n   actualHours=" + actualHours;
+    result += "\n   difficulty=" + difficulty;
+    result += "\n   notes=" + notes;
+    
+    result += "\n   Materials:";
+    
+    for(Material material : materials) {
+      result += "\n      " + material;
+    }
+    
+    result += "\n   Steps:";
+    
+    for(Step step : steps) {
+      result += "\n      " + step;
+    }
+    
+    result += "\n   Categories:";
+    
+    for(Category category : categories) {
+      result += "\n      " + category;
+    }
+    
+    return result;
+  }
 
   public Integer getProjectId() {
     return projectId;
@@ -83,35 +115,4 @@ public class Project {
     return categories;
   }
 
-  @Override
-  public String toString() {
-    String result = "";
-    
-    result += "\n   ID=" + projectId;
-    result += "\n   name=" + projectName;
-    result += "\n   estimatedHours=" + estimatedHours;
-    result += "\n   actualHours=" + actualHours;
-    result += "\n   difficulty=" + difficulty;
-    result += "\n   notes=" + notes;
-    
-    result += "\n   Materials:";
-    
-    for(Material material : materials) {
-      result += "\n      " + material;
-    }
-    
-    result += "\n   Steps:";
-    
-    for(Step step : steps) {
-      result += "\n      " + step;
-    }
-    
-    result += "\n   Categories:";
-    
-    for(Category category : categories) {
-      result += "\n      " + category;
-    }
-    
-    return result;
-  }
 }
